@@ -1,0 +1,15 @@
+name: test deploy health
+
+on:
+  schedule:
+    - cron:  '0/15 * * * *'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check deployed health
+      uses: jtalk/url-health-check-action@v2
+      with:
+        url: https://fullstackopen21-pokedex.herokuapp.com/health
