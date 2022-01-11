@@ -2,8 +2,10 @@ name: Testing stuff
 
 on:
   push:
-    branches: [master, vime-dev]
-    pull_request:
+    branches:
+      - master
+      - vime-dev
+  pull_request:
     branches: [master]
     types: [opened, synchronize]
 
