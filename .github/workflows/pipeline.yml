@@ -22,6 +22,12 @@ jobs:
         run: npm run eslint
       - name: build
         run: npm run build
+      - name: e2e testing
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:e2e
+          start: npm run start
+          wait-on: http://localhost:5000
       - name: deploy
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ''), '#skip') }}
         uses: akhileshns/heroku-deploy@v3.12.12
