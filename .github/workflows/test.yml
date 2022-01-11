@@ -2,8 +2,7 @@ name: Testing stuff
 
 on:
   push:
-    branches:
-      - master
+    branches: [master, vime-dev]
 
 jobs:
   a_test_job:
